@@ -3,26 +3,27 @@ import java.util.Scanner;
 
 public class Abhi {
 
-    static int kan1;
-    static int kan2;
-    static int kan3;
-    static String res="";
+
     static String kangaroo(int x1, int v1, int x2, int v2) {
+         int kan1;
+         int kan2;
+         int kan3;
+         String res="No";
         kan1=x1+v1;
         kan2=x2+v2;
-        kan3=x2-x1;
-        while ((kan2-kan1)<kan3){
+        kan3=Math.abs(x2-x1);
+        while ((Math.abs(kan2-kan1))<kan3){
        // while (kan1!=kan2) {
             if (kan1 == kan2) {
                 res="Yes";
+                break;
             }
             else if (kan1 != kan2)
             {
                 kan1 += v1;
                 kan2 += v2;
             }
-            else
-                res="no";
+
         }
     return res;
     }
